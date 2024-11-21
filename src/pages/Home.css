@@ -1,0 +1,18 @@
+.slick-prev,
+.slick-next {
+  background-color: #007bff; /* Example button color */
+  color: rgb(191, 17, 17);
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
