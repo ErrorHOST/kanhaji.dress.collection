@@ -1,11 +1,61 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section {
+  padding: 2rem;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Products */
+.top-products .product-list {
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* All Products (Carousel) */
+.all-products .slider-card {
+  /* padding: 1rem; */
+}
+
 .slick-prev,
 .slick-next {
-  background-color: #007bff; /* Example button color */
-  color: rgb(191, 17, 17);
+  background-color: #007bff;
   border: none;
-  font-size: 16px;
-  padding: 10px;
   border-radius: 50%;
+  color: white;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 1000;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #0056b3;
 }
 
 .slick-prev {
@@ -16,3 +66,21 @@
   right: -50px;
 }
 
+.product-grid {
+  display: grid;
+  gap: 10px;
+  margin: 8px;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets and smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+  }
+}

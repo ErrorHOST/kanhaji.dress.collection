@@ -1,41 +1,50 @@
 .carousel-item img {
-    height: 500px;
-    object-fit: cover;
+  height: 500px;
+  object-fit: cover;
+}
+.custom-carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-indicators button {
+  background-color: #777;
+}
+
+.carousel-indicators .active {
+  background-color: #333;
+}
+
+.rounded-img {
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #444;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.custom-icon {
+  filter: brightness(0) invert(1); /* makes control icons white */
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 200px;
   }
-  .custom-carousel {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .carousel-indicators button {
-    background-color: #777;
-  }
-  
-  .carousel-indicators .active {
-    background-color: #333;
-  }
-  
-  .rounded-img {
-    border-radius: 10px;
-  }
-  
-  .carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: #444;
-    border-radius: 50%;
-    padding: 5px;
-  }
-  
-  .custom-icon {
-    filter: brightness(0) invert(1); /* makes control icons white */
-    width: 40px;
-    height: 40px;
-  }
-  
+}
+
+@media (max-width: 480px) {
+
+}

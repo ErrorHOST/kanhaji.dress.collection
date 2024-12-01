@@ -1,42 +1,61 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Navbar, Nav, NavbarBrand } from 'react-bootstrap';
 import './header.css';
 
-const Header = () => {
+function Header() {
   return (
-    <nav className="navbar navbar-expand-lg  sticky-top custom-header mb-3">
-      <div className="container-fluid">
-        <a className="navbar-brand me-5 custom-logo" href="#">Clothwear</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products">Products</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">About Us</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Contact Us</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Liked Products</a>
-            </li>
-          </ul>
-          <div className="d-flex align-items-center">
-            <a href="/cart" className="btn btn-outline-primary me-2">Cart</a>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Navbar
+    style={{
+      backgroundColor: "rgba(210, 207, 199, 0.48)",
+      backdropFilter: "blur(2.8px)",
+      position: "sticky",
+      top: "0",
+      zIndex: "10",
+      display: "flex",
+      marginRight:'10px',
+      justifyContent: "end",
+    }}
+    expand="lg"
+  >
+    <NavbarBrand
+      href="/"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        marginLeft: "20px",
+        position: "absolute",
+        top: '3px',
+        left: "10px",
+      }}
+    >
+      <img src="Kanhajilogo.svg" width={50} alt="Logo" />
+      {/* <span style={{fontSize:"22px", color:"#B77748", marginRight:"70px"}}> SeedConnect</span> */}
+    </NavbarBrand>
+  
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  
+    <Navbar.Collapse id="basic-navbar-nav" style={{ justifyContent: "center" }}>
+      <Nav className="nav-options" style={{ display: "flex", gap: "20px" }}>
+        <NavLink to="/" className="nav-link">
+          Home
+        </NavLink>
+        <NavLink to="/products" className="nav-link">
+          Products
+        </NavLink>
+        <NavLink to="/about-us" className="nav-link">
+          About Us
+        </NavLink>
+        <NavLink to="/quality" className="nav-link">
+          Liked Products
+        </NavLink>
+        <NavLink to="/feedback" className="nav-link">
+          Feedback
+        </NavLink>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
+  
   );
 }
 

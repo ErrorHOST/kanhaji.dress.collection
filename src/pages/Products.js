@@ -32,8 +32,18 @@ function Products() {
           </button>
         ))}
       </div>
-      <div className="product-list">
-        {filteredProducts.map(product => (
+      <div
+        className="mb-3 product-grid"
+        style={{
+          maxWidth: "100%",
+          boxSizing: "border-box",
+          display: "grid",
+          gap: "10px",
+          margin: "8px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+          justifyContent: "center",
+        }}
+      >        {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
