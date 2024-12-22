@@ -69,7 +69,7 @@ const Header = () => {
             {/* <!-- Logo --> */}
             <div className="header-logo">
               <NavLink to="/" onClick={closeMenu}>
-                <img src="KanhajiLogo.svg" alt="my logo img" />
+                <img src="/KanhajiLogo.svg" alt="This is logo" />
               </NavLink>
             </div>
 
