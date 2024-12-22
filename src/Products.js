@@ -23,7 +23,7 @@ const Products = () => {
             
         </section>
       </div>
-      <ScrollToTop />
+      
     </Wrapper>
   )
 }

@@ -13,11 +13,13 @@ import ErrorPage from "./ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import Login from "./Login";
 import SingleProduct from "./SingleProduct";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
       <Router>
+      <ScrollToTop />
         <GlobalStyle />
         <Header />
         <Routes>

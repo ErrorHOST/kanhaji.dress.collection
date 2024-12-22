@@ -57,7 +57,7 @@ const Home = () => {
       </div>
       <Slider products={products}/>
       <ViewAllProductsButton/>
-      <ScrollToTop />
+      
     </>
   );
 };

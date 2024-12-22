@@ -8,7 +8,9 @@ const GridView = ({ products }) => {
   
   return (
     <>
+    <div style={{marginTop:"5%"}}>
       <Category />
+    </div>
       <Wrapper>
         <section class="section-space">
           <div class="container">

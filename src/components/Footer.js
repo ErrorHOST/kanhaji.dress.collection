@@ -131,22 +131,22 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink tabIndex={-1} to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/products">Products</NavLink>
+              <NavLink tabIndex={-1} to="/products">Products</NavLink>
             </li>
             <li>
-              <NavLink to="/liked">Liked Products</NavLink>
+              <NavLink tabIndex={-1} to="/liked">Liked Products</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About Us</NavLink>
+              <NavLink tabIndex={-1} to="/about">About Us</NavLink>
             </li>
             <li>
-              <NavLink to="/feedback">Feedback</NavLink>
+              <NavLink tabIndex={-1} to="/feedback">Feedback</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">Your Cart</NavLink>
+              <NavLink tabIndex={-1} to="/cart">Your Cart</NavLink>
             </li>
           </ul>
         </Column>
@@ -167,10 +167,10 @@ const Footer = () => {
         <Column>
           <h4>Follow Us</h4>
           <SocialIcons>
-            <NavLink to="https://facebook.com" target="_blank" rel="noreferrer">
+            <NavLink to="https://facebook.com" tabIndex={-1} target="_blank" rel="noreferrer">
               <FaFacebookF />
             </NavLink>
-            <NavLink
+            <NavLink tabIndex={-1}
               to="https://www.instagram.com/kanhaji_dress_collection_/"
               target="_blank"
               rel="noreferrer"
