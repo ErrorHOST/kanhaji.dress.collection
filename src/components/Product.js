@@ -4,18 +4,16 @@ import { NavLink } from "react-router-dom";
 import { FaExpandAlt } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
-import { useCartContext } from '../context/cart_context';
 
 const Product = ({ product }) => {
-  const { image, name, price, oldPrice } = product;
-  const { addToCart, likeProduct } = useCartContext();
+  const {id, image, name, price, oldPrice } = product;
 
   return (
     <Wrapper>
       <div className="product-item">
         {/* Product Image */}
         <div className="product-thumb">
-          <NavLink to={`/product/${product.id}`} className="d-block">
+          <NavLink to={`product-detail/${id}`} className="d-block">
             <img src={image} alt={name} loading="lazy" />
           </NavLink>
           <span className="flag-new">new</span>
@@ -25,10 +23,10 @@ const Product = ({ product }) => {
             <button type="button" className="product-action-btn quick-view">
               <FaExpandAlt />
             </button>
-            <button type="button" onClick={() => addToCart(product)}  className="product-action-btn add-to-cart">
+            <button type="button"  className="product-action-btn add-to-cart">
               <BsCart3 />
             </button>
-            <button type="button" onClick={() => likeProduct(product)} className="product-action-btn wishlist">
+            <button type="button" className="product-action-btn wishlist">
               <IoMdHeartEmpty />
             </button>
           </div>
@@ -37,7 +35,7 @@ const Product = ({ product }) => {
         {/* Product Information */}
         <div className="product-info">
           <h4 className="title">
-            <NavLink to={`/product/${product.id}`}>{name}</NavLink>
+            <NavLink to={`product-detail/${id}`}>{name}</NavLink>
           </h4>
           <div className="prices">
             <span className="price">₹{price}</span>
@@ -50,10 +48,10 @@ const Product = ({ product }) => {
           <button type="button"  className="button">
             <FaExpandAlt />
           </button>
-          <button type="button" onClick={() => likeProduct(product)} className="button">
+          <button type="button" className="button">
             <IoMdHeartEmpty />
           </button>
-          <button type="button" onClick={() => addToCart(product)} className="button action-cart">
+          <button type="button" className="button action-cart">
             <span>Add to cart</span>
           </button>
         </div>

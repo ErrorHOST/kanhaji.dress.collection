@@ -4,9 +4,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import Category from "./components/Category";
 import styled from "styled-components";
 import TopProducts from "./components/TopProducts";
-import { useFilterContext } from './context/filter_context';
 import Slider from "./components/Slider";
 import ViewAllProductsButton from "./components/ProductButton";
+import { products } from "./data/productsData";
 
 // Styled Components for the Modern Text
 const Heading = styled.h2`
@@ -35,7 +35,6 @@ const Heading = styled.h2`
 `;
 
 const Home = () => {
-  const { filter_products, grid_view } = useFilterContext();
 
   // const products = [
   //   // Example product data
@@ -54,9 +53,9 @@ const Home = () => {
       <Heading>Welcome to Krishna's Wardrobe – Where Style Meets Elegance!</Heading>
       <Category />
       <div>
-      <TopProducts products={filter_products} />
+      <TopProducts products={products} />
       </div>
-      <Slider products={filter_products}/>
+      <Slider products={products}/>
       <ViewAllProductsButton/>
       <ScrollToTop />
     </>

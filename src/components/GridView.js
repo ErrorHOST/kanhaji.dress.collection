@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Product from "./Product";
 import Category from "./Category";
 
+
 const GridView = ({ products }) => {
+  
   return (
     <>
       <Category />

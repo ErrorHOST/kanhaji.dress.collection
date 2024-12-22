@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
-import ProductList from './components/ProductList';
-import Sort from './components/Sort';
-import FilterSection from './components/FilterSection';
 import PageNavigation from './components/PageNavigation';
 import ScrollToTop from './components/ScrollToTop';
+import GridView from './components/GridView';
+import { products } from "./data/productsData";
+
+
 
 const Products = () => {
   return (
@@ -16,11 +17,8 @@ const Products = () => {
         </div> */}
 
         <section className="product-view--sort">
-          <div className="sort-filter">
-            <Sort />
-          </div>
           <div className="main-product">
-            <ProductList />
+            <GridView products={products}/>            
           </div>
             
         </section>

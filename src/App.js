@@ -12,18 +12,9 @@ import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import Login from "./Login";
-import ProductList from "./components/ProductList";
-import ProductDetail from "./SingleProduct";
-import { CartProvider, useCartContext } from './context/cart_context';
-import { products } from "./data/productsData";
 import SingleProduct from "./SingleProduct";
 
 function App() {
-    const { loadProducts } = useCartContext();
-  
-    useEffect(() => {
-      loadProducts(products); // Load initial data
-    }, []);
   return (
     <>
       <Router>
@@ -33,7 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/product-detail/:id" element={<SingleProduct />} />
           <Route path="/liked" element={<LikedProducts />} />
           <Route path="/about" element={<About />} />
           <Route path="/feedback" element={<Feedback />} />

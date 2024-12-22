@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { useFilterContext } from "../context/filter_context";
+import { products } from "../data/productsData";
 
 const PageNavigation = ({ title }) => {
-  const { filter_products } = useFilterContext();
   return (
     <Wrapper>
       <div>
@@ -17,7 +16,7 @@ const PageNavigation = ({ title }) => {
           }}
         >
           <p>All Products</p>
-          <span className="span2">{`Showing ${filter_products.length} Results`}</span>
+          <span className="span2">{`Showing ${products.length} Results`}</span>
         </div>
       </div>
     </Wrapper>

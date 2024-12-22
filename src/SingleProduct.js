@@ -1,49 +1,23 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProductContext } from './context/productcontext';
 import styled from 'styled-components';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { BsCart3 } from 'react-icons/bs';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { products } from './data/productsData';
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const { products } = useProductContext();
   const [selectedSize, setSelectedSize] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
-
-  const product = products.find((item) => item.id === id);
-
-console.log(product);
-
-
+  
+  const product = products.find((item) => item.id === Number(id));
+  
   if (!product) return <div>Product Not Found</div>;
-
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
   };
 
-  const renderRating = () => {
-    const fullStars = Math.floor(product.rating);
-    const hasHalfStar = product.rating % 1 !== 0;
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-    return (
-      <div className="rating">
-        {Array(fullStars)
-          .fill(null)
-          .map((_, index) => (
-            <AiFillStar key={`full-${index}`} className="star" />
-          ))}
-        {hasHalfStar && <AiFillStar className="star half" />}
-        {Array(emptyStars)
-          .fill(null)
-          .map((_, index) => (
-            <AiOutlineStar key={`empty-${index}`} className="star" />
-          ))}
-      </div>
-    );
-  };
 
   return (
     <Wrapper>
@@ -55,10 +29,10 @@ console.log(product);
           <h1 className="product-title">{product.name}</h1>
           <div className="price-rating">
             <p className="price">${product.price}</p>
-            <div className="ratings">
+            {/* <div className="ratings">
               {renderRating()}
               <span className="reviews">({product.reviews} reviews)</span>
-            </div>
+            </div> */}
           </div>
           <p className="description">{product.description}</p>
           <div className="size-selector">
